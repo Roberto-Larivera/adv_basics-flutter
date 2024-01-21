@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:adv_basics/styled_text.dart';
-import 'package:adv_basics/styled_text_btn.dart';
 
-class StartQuiz extends StatelessWidget {
-  const StartQuiz({super.key});
+class StartScreen extends StatelessWidget {
+  const StartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -13,20 +12,19 @@ class StartQuiz extends StatelessWidget {
       children: [
         Image.asset('assets/images/quiz-logo.png', width: 250),
         const SizedBox(height: 50),
-        const StyledText(text: 'Learn Flutter he fun way!', fontSize: 20),
+        const StyledText.startWhite('Learn Flutter he fun way!'),
         const SizedBox(height: 50),
         OutlinedButton(
-          onPressed: () {
-            debugPrint('Received click');
-          },
+          onPressed: () {},
           style: OutlinedButton.styleFrom(
+            foregroundColor: Colors.white,
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(10),   
             ),
             side: const BorderSide(color: Colors.white, width: 0.5),
           ),
-          child: const StyledTextBtn(text: 'Start Quiz', fontSize: 15),
+          child: const StyledText.btn('Start Quiz'),
         ),
       ],
     );

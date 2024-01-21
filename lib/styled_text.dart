@@ -1,14 +1,32 @@
 import 'package:flutter/material.dart';
 
 class StyledText extends StatelessWidget {
-  const StyledText({
-    Key? key,
-    required this.text,
-    required this.fontSize,
-  }) : super(key: key);
+  const StyledText(
+    this.text,
+    this.fontSize,
+    this.fontWeight,
+    this.color, {
+    super.key,
+  });
+
+  const StyledText.startWhite(
+    this.text, {
+    super.key,
+  })  : fontSize = 20,
+        fontWeight = FontWeight.w400,
+        color = Colors.white;
+
+  const StyledText.btn(
+    this.text, {
+    super.key,
+  })  : fontSize = 15,
+        fontWeight = FontWeight.bold,
+        color = Colors.white;
 
   final String text;
+  final Color color;
   final double fontSize;
+  final FontWeight fontWeight;
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +34,8 @@ class StyledText extends StatelessWidget {
       text,
       style: TextStyle(
         fontSize: fontSize,
-        fontWeight: FontWeight.w400,
-        color: Colors.white,
+        fontWeight: fontWeight,
+        color: color,
       ),
     );
   }
