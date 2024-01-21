@@ -27,6 +27,9 @@ class _QuizState extends State<Quiz> {
   */
 // 2 - Utilizzare una stringa di identificazione dello screen, e usare operatore ternario per l'inserimento del widget
 // 3 - Utilizzare un enum per l'identificazione dello screen, e usare l'if con una variabile prima del return del build
+
+  final List<String> selectedAnswers = [];
+
   var activeScreen = 'start_screen';
   swhitchScreen() {
     setState(() {
@@ -34,11 +37,15 @@ class _QuizState extends State<Quiz> {
     });
   }
 
+  void chooseAnswer(String answer) {
+    selectedAnswers.add(answer);
+  }
+
   @override
   Widget build(context) {
     Widget activeWidget = StartScreen(swhitchScreen);
     if (activeScreen == 'questions_screen') {
-      activeWidget = const QuestionsScreen();
+      activeWidget = QuestionsScreen(onSelectedAnswer: chooseAnswer);
     }
     return MaterialApp(
       home: Scaffold(
