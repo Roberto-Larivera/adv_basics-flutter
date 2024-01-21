@@ -7,26 +7,29 @@ class StartScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Image.asset('assets/images/quiz-logo.png', width: 250),
-        const SizedBox(height: 50),
-        const StyledText.startWhite('Learn Flutter he fun way!'),
-        const SizedBox(height: 50),
-        OutlinedButton(
-          onPressed: () {},
-          style: OutlinedButton.styleFrom(
-            foregroundColor: Colors.white,
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),   
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset('assets/images/quiz-logo.png', width: 250),
+          const SizedBox(height: 50),
+          const StyledText.startWhite('Learn Flutter he fun way!'),
+          const SizedBox(height: 50),
+          OutlinedButton.icon(
+            onPressed: () {},
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
+              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              side: const BorderSide(color: Colors.white, width: 0.5),
             ),
-            side: const BorderSide(color: Colors.white, width: 0.5),
+            icon: const Icon(Icons.play_arrow),
+            label: const StyledText.btn('Start Quiz'),
           ),
-          child: const StyledText.btn('Start Quiz'),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

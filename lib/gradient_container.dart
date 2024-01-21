@@ -18,9 +18,7 @@ class GradientContainer extends StatelessWidget {
           end: Alignment.bottomRight,
         ),
       ),
-      child: const Center(
-        child: StartScreen(),
-      ),
+      child: const StartScreen(),
     );
   }
 }
