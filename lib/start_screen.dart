@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:adv_basics/styled_text.dart';
 
 class StartScreen extends StatelessWidget {
-  const StartScreen({super.key});
+  const StartScreen(this.swhitchScreen, {super.key});
 
+  final void Function() swhitchScreen;
+  
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -25,7 +27,7 @@ class StartScreen extends StatelessWidget {
           const StyledText.startWhite('Learn Flutter he fun way!'),
           const SizedBox(height: 50),
           OutlinedButton.icon(
-            onPressed: () {},
+            onPressed: swhitchScreen,
             style: OutlinedButton.styleFrom(
               foregroundColor: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),

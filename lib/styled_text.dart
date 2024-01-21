@@ -16,6 +16,20 @@ class StyledText extends StatelessWidget {
         fontWeight = FontWeight.w400,
         color = Colors.white;
 
+  const StyledText.answerTitle(
+    this.text, {
+    super.key,
+  })  : fontSize = 15,
+        fontWeight = FontWeight.w400,
+        color = Colors.white;
+
+  const StyledText.answerText(
+    this.text, {
+    super.key,
+  })  : fontSize = 15,
+        fontWeight = FontWeight.bold,
+        color = Colors.white;
+
   const StyledText.btn(
     this.text, {
     super.key,
