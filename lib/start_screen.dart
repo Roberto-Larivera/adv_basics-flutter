@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:adv_basics/styled_text.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen(this.swhitchScreen, {super.key});
 
   final void Function() swhitchScreen;
-  
+
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -24,7 +24,16 @@ class StartScreen extends StatelessWidget {
           //     opacity: .5,
           //     child: Image.asset('assets/images/quiz-logo.png', width: 250)),
           const SizedBox(height: 50),
-          const StyledText.startWhite('Learn Flutter he fun way!'),
+          // const StyledText.startWhite('Learn Flutter he fun way!'),
+          Text(
+            'Learn Flutter he fun way!',
+            style: GoogleFonts.lato(
+              fontSize: 22,
+              fontWeight: FontWeight.bold,
+              color: const Color.fromARGB(255, 193, 162, 255),
+            ),
+            textAlign: TextAlign.center,
+          ),
           const SizedBox(height: 50),
           OutlinedButton.icon(
             onPressed: swhitchScreen,
