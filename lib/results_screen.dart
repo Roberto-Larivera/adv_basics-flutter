@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:adv_basics/data/questions.dart';
 import 'package:adv_basics/questions_summary.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
@@ -82,7 +83,16 @@ class ResultsScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(title),
+            Text(
+              title,
+              style: GoogleFonts.lato(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: const Color.fromARGB(255, 193, 162, 255),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            // Text(title),
             const SizedBox(
               height: 30,
             ),
