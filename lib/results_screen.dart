@@ -55,16 +55,23 @@ class ResultsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // in caso è una funzione bisogna passarla in una variabile,
-    // ma se si usa il get non si deve richiamrae ma utilizzare direttaente. 
-    //e comunque continua ad avere le funzionalità di funzione 
+    // ma se si usa il get non si deve richiamrae ma utilizzare direttaente.
+    //e comunque continua ad avere le funzionalità di funzione
     //anche s e si comporta come una variabile
 
     // final summaryData = getSummaryData();
 
     final numTotalQuestions = questions.length;
-    final numCorectQuestions = summaryData.where((data) {
-      return data['correct_answer'] == data['user_answer'];
-    }).length;
+
+    // funzione normale amnonima
+    // final numCorectQuestions = summaryData.where((data) {
+    //   return data['correct_answer'] == data['user_answer'];
+    // }).length;
+
+    // utilizzo di una arrow function
+    final numCorectQuestions = summaryData
+        .where((data) => data['correct_answer'] == data['user_answer'])
+        .length;
     final title =
         'You answared $numCorectQuestions out of $numTotalQuestions questions correctly!';
 
