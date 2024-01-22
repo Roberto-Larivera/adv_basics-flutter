@@ -46,7 +46,11 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             ),
             // StyledText.answerTitle(currentQuestion.text),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map(
+              // utilizzo come funzione
+            // ...currentQuestion.getShuffledAnswers().map(
+
+              // utilizzo come getter - get
+            ...currentQuestion.shuffledAnswers.map(
                   (answer) => AnswerButton(
                     answerText: answer,
                     onTap: () {
