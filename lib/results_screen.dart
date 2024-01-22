@@ -8,6 +8,8 @@ class ResultsScreen extends StatelessWidget {
   const ResultsScreen({
     super.key,
     required this.chosenAnswers,
+    required this.restartQuiz,
+    required this.startScreen,
   });
 
   final List<String> chosenAnswers;
@@ -52,6 +54,9 @@ class ResultsScreen extends StatelessWidget {
 
     return summary;
   }
+
+  final void Function() restartQuiz;
+  final void Function() startScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -100,7 +105,26 @@ class ResultsScreen extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            TextButton(onPressed: () {}, child: const Text('Restart quiz!'))
+            TextButton.icon(
+              onPressed: restartQuiz,
+              icon: const Icon(
+                Icons.replay,
+              ),
+              label: const Text('Restart quiz!'),
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+            ),
+            TextButton.icon(
+              onPressed: startScreen,
+              icon: const Icon(
+                Icons.home_filled,
+              ),
+              label: const Text('Return home'),
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.white,
+              ),
+            ),
           ],
         ),
       ),
